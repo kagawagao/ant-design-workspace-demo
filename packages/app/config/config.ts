@@ -150,7 +150,8 @@ export default defineConfig({
   ],
   mfsu: {
     strategy: 'normal',
-    exclude: ['@opd/shared']
+    // 添加以处理热更新不生效
+    exclude: [/@opd\/shared/]
   },
   requestRecord: {},
 });
