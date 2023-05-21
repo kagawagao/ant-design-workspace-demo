@@ -150,6 +150,7 @@ export default defineConfig({
   ],
   mfsu: {
     strategy: 'normal',
+    exclude: ['@opd/shared']
   },
   requestRecord: {},
 });

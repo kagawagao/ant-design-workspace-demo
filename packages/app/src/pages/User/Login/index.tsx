@@ -366,7 +366,9 @@ const Login: React.FC = () => {
         </LoginForm>
       </div>
 
-      <CustomButton onClick={() => test()}>test</CustomButton>
+      <CustomButton type="primary" onClick={() => test()}>
+        test
+      </CustomButton>
       <Footer />
     </div>
   );
