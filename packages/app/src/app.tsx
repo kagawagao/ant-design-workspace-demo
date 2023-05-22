@@ -15,6 +15,8 @@ const loginPath = '/user/login';
 
 test();
 
+const NO_AUTH_PAGES = ['/test', loginPath];
+
 /**
  * @see  https://umijs.org/zh-CN/plugins/plugin-initial-state
  * */
@@ -37,7 +39,7 @@ export async function getInitialState(): Promise<{
   };
   // 如果不是登录页面，执行
   const { location } = history;
-  if (location.pathname !== loginPath) {
+  if (!NO_AUTH_PAGES.includes(location.pathname)) {
     const currentUser = await fetchUserInfo();
     return {
       fetchUserInfo,
@@ -69,7 +71,7 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
     onPageChange: () => {
       const { location } = history;
       // 如果没有登录，重定向到 login
-      if (!initialState?.currentUser && location.pathname !== loginPath) {
+      if (!initialState?.currentUser && !NO_AUTH_PAGES.includes(location.pathname)) {
         history.push(loginPath);
       }
     },

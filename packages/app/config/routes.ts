@@ -52,6 +52,15 @@ export default [
     component: './TableList',
   },
   {
+    path: '/test',
+    name: 'test',
+    icon: 'crown',
+    component: './test',
+    hideInMenu: true,
+    menuRender: false,
+    headerRender: false,
+  },
+  {
     path: '/',
     redirect: '/welcome',
   },
