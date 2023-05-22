@@ -18,7 +18,8 @@
       "@@/*": ["./src/.umi/*"],
       "@@test/*": ["./src/.umi-test/*"]
     },
-    "forceConsistentCasingInFileNames": false
+    "forceConsistentCasingInFileNames": false,
+    "types": ["@opd/shared/shared.d.ts"]
   },
   "include": ["./**/*.d.ts", "./**/*.ts", "./**/*.tsx"]
 }

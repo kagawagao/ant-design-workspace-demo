@@ -3,6 +3,7 @@ import { Question, SelectLang } from '@/components/RightContent';
 import { LinkOutlined } from '@ant-design/icons';
 import type { Settings as LayoutSettings } from '@ant-design/pro-components';
 import { SettingDrawer } from '@ant-design/pro-components';
+import { SharedStruct } from '@opd/shared/types';
 import { test } from '@opd/shared/utils';
 import type { RunTimeLayoutConfig } from '@umijs/max';
 import { Link, history } from '@umijs/max';
@@ -12,6 +13,17 @@ import { errorConfig } from './requestErrorConfig';
 import { currentUser as queryCurrentUser } from './services/ant-design-pro/api';
 const isDev = process.env.NODE_ENV === 'development';
 const loginPath = '/user/login';
+
+const a: SharedStruct = {
+  a: 1,
+};
+
+const b: GlobalShared = {
+  c: 1,
+};
+
+console.log(a);
+console.log(b.c);
 
 test();
 
